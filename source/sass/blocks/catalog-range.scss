@@ -1,0 +1,177 @@
+.catalog-range__scale {
+  position: relative;
+  width: 280px;
+  height: 2px;
+  background-color: $color-grey-light;
+  margin-bottom: 36px;
+}
+
+.catalog-range__bar {
+  width: 241px;
+  height: 4px;
+  background-color: $color-primary-lighter;
+  position: absolute;
+  top: -1px;
+}
+
+.catalog-range__toggle {
+  width: 24px;
+  height: 24px;
+  border: 2px solid $color-primary-lighter;
+  border-radius: 50%;
+  background-color: $color-white;
+  position: absolute;
+
+  &--min {
+    top: -9px;
+    left: 0;
+  }
+
+  &--max {
+    top: -9px;
+    left: 236px;
+  }
+
+  &:hover {
+    outline: 8px solid $color-primary-opacity;
+    outline-offset: -13px;
+  }
+
+  &:focus {
+    outline: 8px solid $color-primary-opacity;
+    outline-offset: -13px;
+  }
+
+  &:active {
+    outline: 8px solid $color-primary;
+    outline-offset: -13px;
+  }
+}
+
+.catalog-range__scale--disabled {
+  pointer-events: none;
+}
+
+.catalog-range__scale--disabled .catalog-range__bar {
+  background-color: $color-grey;
+}
+
+.catalog-range__scale--disabled .catalog-range__toggle {
+  border-color: $color-grey;
+}
+
+.catalog-range__dash {
+  width: 9px;
+  height: 2px;
+  background-color: $color-grey;
+}
+
+.catalog-range__inputs-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 280px;
+}
+
+.catalog-range__input {
+  @include font(500, 16px, 24px);
+  color: $color-black;
+  width: 118px;
+  height: 38px;
+  background-color: $color-white;
+  border: 2px solid $color-primary-lighter;
+  border-radius: 4px;
+  padding: 7px 10px;
+  text-align: center;
+  caret-color: transparent;
+
+  &::placeholder {
+    @include font(500, 16px, 24px);
+    color: $color-grey;
+  }
+
+  &:focus-visible {
+    outline: none;
+  }
+
+  &:focus {
+    border-color: $color-primary-darker;
+  }
+
+  &:disabled {
+    background-color: $color-grey-lightest;
+    border-color: $color-grey;
+  }
+}
+
+.catalog-range__input[type="number"]::-webkit-outer-spin-button,
+.catalog-range__input[type="number"]::-webkit-inner-spin-button {
+  appearance: none;
+}
+
+.catalog-range__input[type="number"] {
+  appearance: textfield;
+}
+
+.catalog-range__input[type="number"]:hover,
+.catalog-range__input[type="number"]:focus {
+  appearance: number-input;
+}
+
+@media (min-width: $tablet-width) {
+  .catalog-range__input {
+    width: 93px;
+  }
+
+  .catalog-range__scale {
+    width: 220px;
+    margin-left: 6px;
+    margin-bottom: 34px;
+  }
+
+  .catalog-range__bar {
+    width: 185px;
+  }
+
+  .catalog-range__toggle {
+    &--max {
+      left: 177px;
+    }
+  }
+
+  .catalog-range__inputs-wrap {
+    width: 220px;
+    margin-left: 7px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .catalog-range__input {
+    width: 134px;
+  }
+
+  .catalog-range__scale {
+    width: 318px;
+  }
+
+  .catalog-range__bar {
+    width: 274px;
+  }
+
+  .catalog-range__toggle {
+    &--min {
+      top: -10px;
+      left: -4px;
+    }
+
+    &--max {
+      left: 270px;
+      top: -10px;
+    }
+  }
+
+  .catalog-range__inputs-wrap {
+    width: 318px;
+    margin-left: 0;
+  }
+}
